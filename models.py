@@ -6,6 +6,7 @@ from langchain_community.embeddings import OllamaEmbeddings
 from langchain_anthropic import ChatAnthropic
 from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_voyageai import VoyageAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI, HarmBlockThreshold, HarmCategory
 from pydantic.v1.types import SecretStr
 
@@ -94,3 +95,8 @@ def get_embedding_hf(model_name="sentence-transformers/all-MiniLM-L6-v2"):
 def get_embedding_openai(api_key=None):
     api_key = api_key or get_api_key("openai")
     return OpenAIEmbeddings(api_key=api_key) #type: ignore
+
+def get_embedding_voyageai(api_key=None):
+    api_key = api_key or get_api_key("voyageai")
+    return VoyageAIEmbeddings(voyage_api_key=api_key, model="voyage-2", batch_size=72)
+

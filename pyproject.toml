@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "agent-zero"
+version = "0.1.0"
+description = ""
+authors = ["Phan Văn Thành <thanhphanvan1610@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.4"
+ansio = "0.0.1"
+python-dotenv = "1.0.1"
+langchain-groq = "0.1.6"
+langchain-huggingface = "0.0.3"
+langchain-openai = "0.1.15"
+langchain-community = "0.2.7"
+langchain-anthropic = "0.1.19"
+langchain-chroma = "0.1.2"
+langchain-google-genai = "1.0.7"
+webcolors = "24.6.0"
+sentence-transformers = "3.0.1"
+docker = "7.1.0"
+paramiko = "3.4.0"
+duckduckgo-search = "6.1.12"
+inputimeout = "1.0.4"
+langchain-voyageai = "^0.1.1"
+python-telegram-bot = "^21.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
