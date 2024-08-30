@@ -100,3 +100,6 @@ def get_embedding_voyageai(api_key=None):
     api_key = api_key or get_api_key("voyageai")
     return VoyageAIEmbeddings(voyage_api_key=api_key, model="voyage-2", batch_size=72)
 
+def get_apikey_telegrambot():
+    return get_api_key("telebot")
+

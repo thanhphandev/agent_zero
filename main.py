@@ -6,8 +6,7 @@ from python.helpers.print_style import PrintStyle
 from python.helpers.files import read_file
 from python.helpers import files
 import python.helpers.timed_input as timed_input
-from platforms.telegram_bot import start_telegram_bot
-
+from platforms.telegram_bot import TelegramBot
 input_lock = threading.Lock()
 os.chdir(files.get_abs_path("./work_dir")) #change CWD to work_dir
 
@@ -66,12 +65,10 @@ def initialize():
     # create the first agent
     agent0 = Agent( number = 0, config = config )
     
-    bot_token = "7341806545:AAFgVxszt2L02dyc-BiUCZxD0fgF0TYZnJA"
-    print("Telegram_bot initialized.")
+    bot_token = models.get_apikey_telegrambot() or ""
     
-    telebot = start_telegram_bot(bot_token, agent0)
-    if(telebot == "off"):
-        pass
+    tele_bot = TelegramBot(bot_token, agent0)
+    tele_bot.run()
     # start the chat loop
     # chat(agent0)
 
